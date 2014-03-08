@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Verbex</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/yeti/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="container">
+      <div class="row text-center">
+        <h1>Verbex</h1>
+        <div class="col-lg-10 col-lg-offset-1">Making simple regular expressions a bit easier to construct, by using word-blocks. Try adding, removing or rearranging a block in the blockchain, and watch how it affects the regular expression, by looking at the highlighted text.</div>
+      </div>
+
+
+      <h3>Text to match</h3>
+      <div class="matchMe" contenteditable>
+Right now it's highlighting the url beneath.<br>
+http://www.madskonradsen.dk/
+      </div>
+      <hr>
+
+      <h3>Choose blocks</h3>
+      <div class="blocks btn-toolbar"></div>
+      <div class="blockSettings well"></div>
+
+      <hr>
+
+      <h3>Blockchain</h3>
+      <!--<div id="selectedBlocks" class="well btn-toolbar"><i class="noBlocks">No blocks added</i></div>-->
+<div class="selectedBlocks well btn-toolbar"><div class="btn-group" draggable="true"><div class="block btn btn-primary btn-sm" data-name="startOfLine" data-params="">Start of line</div><div class="removeMe btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></div></div><div class="btn-group" draggable="true"><div class="block btn btn-primary btn-sm" data-name="then" data-params="{&quot;string&quot;:&quot;aHR0cA==&quot;}">Then 'http'</div><div class="removeMe btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></div></div><div class="btn-group" draggable="true"><div class="block btn btn-primary btn-sm" data-name="maybe" data-params="{&quot;string&quot;:&quot;cw==&quot;}">Maybe 's'</div><div class="removeMe btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></div></div><div class="btn-group" draggable="true"><div class="block btn btn-primary btn-sm" data-name="then" data-params="{&quot;string&quot;:&quot;Oi8v&quot;}">Then '://'</div><div class="removeMe btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></div></div><div class="btn-group" draggable="true"><div class="block btn btn-primary btn-sm" data-name="anythingBut" data-params="{&quot;string&quot;:&quot;IA==&quot;}">Anything but ' '</div><div class="removeMe btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></div></div><div class="btn-group" draggable="true"><div class="block btn btn-primary btn-sm" data-name="endOfLine" data-params="">End of line</div><div class="removeMe btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></div></div></div>
+
+      <hr>
+
+      <h3>Regular expression</h3>
+      <input type="text" class="input-lg outputRegex">
+
+      <hr>
+
+      <footer>
+        <p>Made by <a href="http://www.madskonradsen.dk/">Mads Konradsen</a> - Based on <a href="https://github.com/VerbalExpressions/JSVerbalExpressions">JSVerbalExpressions</a> - View Verbex on <a href="https://github.com/madskonradsen/verbex">GitHub</a> - <a href="javascript:alert('IE11 devtools, crashes everytime i try to detect the bugs... So until they fix their devtools, no IE love');">No IE love</a>
+      </p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-35733762-2', 'madskonradsen.dk');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>

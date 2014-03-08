@@ -1,0 +1,47 @@
+
+
+/* ==========================================================================
+   VerbalExpressions
+   ========================================================================== */
+
+h1 {
+	margin-bottom: 40px;
+}
+
+.highlight {
+	background: yellow;
+}
+
+.matchMe {
+	border: 1px solid black;
+	padding:2px;
+}
+
+.blockSettings {
+	display: none;
+}
+
+.sortable-placeholder {
+	border: 1px dashed #555;
+	margin:5px;
+	background: none;
+	height: 28px;
+	width: 120px;
+	float:left;
+}
+
+.selectedBlocks div div:first-child {
+	cursor: move;
+}
+
+.selectedBlocks .btn, .blocks .btn {
+	margin-bottom: 10px;
+}
+
+.outputRegex {
+	width: 50%;
+}
+
+.error {
+	border: 2px solid red;
+}
