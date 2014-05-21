@@ -186,7 +186,7 @@ var verbalExpressionsApp = (function(){
         var settingsString = "<h4>" + currentBlock.publicName + "</h4>";
         settingsString += "<p>" + currentBlock.publicDescription + "</p>";
         settingsString += "<div class=\"form-horizontal\">";
-        if(currentBlock.showSettings.string == true) {
+        if(currentBlock.showSettings.string === true) {
             settingsString +=   "<div class=\"form-group\">";
             settingsString +=       "<label for=\"inputParams\" class=\"col-sm-1 control-label\">What</label>";
             settingsString +=       "<div class=\"col-sm-3\">";
@@ -209,18 +209,18 @@ var verbalExpressionsApp = (function(){
         var blockString = "<div class=\"btn-group\">";
         blockString += "";
         blockString += "<div class=\"block btn btn-primary btn-sm\" data-name=\"" + currentBlock.internalName + "\" data-params='";
-        if(currentBlock.params == true){
-            if(currentBlock.showSettings.string == true) {
+        if(currentBlock.params === true){
+            if(currentBlock.showSettings.string === true) {
                 blockString += "{\"string\":\"" + btoa($(".inputParams").val()) + "\"}";
             }
         }
         blockString += "'>" + currentBlock.publicName;
-        if(currentBlock.params == true){
-            if(currentBlock.showSettings.string == true) {
+        if(currentBlock.params === true){
+            if(currentBlock.showSettings.string === true) {
                 blockString += " '" + $(".inputParams").val() + "'";
             }
         }
-        blockString += "</div>"
+        blockString += "</div>";
         blockString += "<div class=\"removeMe btn btn-primary btn-sm\"><span class=\"glyphicon glyphicon-remove\"></div>";
         blockString += "</div>";
 
@@ -234,12 +234,12 @@ var verbalExpressionsApp = (function(){
         //Calculating the string for verbelExpression
         var verbalString = "VerEx()";
         $(".selectedBlocks .block").each(function() {
-            var blockParams = $(this).data("params")
+            var blockParams = $(this).data("params");
             var blockName = $(this).data("name");
             var currentBlock = method.getCurrentBlock(blockName);
             verbalString += "." + blockName;
-            if(currentBlock.params == true) {
-                if(currentBlock.showSettings.string == true) {
+            if(currentBlock.params === true) {
+                if(currentBlock.showSettings.string === true) {
                     verbalString += "(\""+atob(blockParams.string).replace("\"","\\\"")+"\")";
                 }
             } else {
@@ -263,7 +263,7 @@ var verbalExpressionsApp = (function(){
         $(".matchMe").highlightRegex();
         if (typeof generatedRegex !== "undefined") {
             $(".outputRegex").removeClass("error");
-            if ($(".outputRegex").val() != "") {
+            if ($(".outputRegex").val() !== "") {
                 $(".matchMe").highlightRegex(generatedRegex);
             }
         }
@@ -279,14 +279,14 @@ $("body").on('click', '.removeMe', function() {
     $(this).parent().remove();
     verbalExpressionsApp.blockCalc();
     if($(".selectedBlocks").is(":empty")) {
-        $(".selectedBlocks").html("<i class=\"noBlocks\">No blocks added</i>")
+        $(".selectedBlocks").html("<i class=\"noBlocks\">No blocks added</i>");
     } else {
         $(".noBlocks").remove();
     }
 });
 
 $(".blocks").on('click', '.block', function() {
-    verbalExpressionsApp.showBlockSettings($(this).data("name"))
+    verbalExpressionsApp.showBlockSettings($(this).data("name"));
     if($(this).hasClass("active")) {
         $(this).removeClass("active");  
         $(".blockSettings").slideUp("fast");  
@@ -295,14 +295,14 @@ $(".blocks").on('click', '.block', function() {
         $(this).addClass("active");
         $(".blockSettings").slideDown("fast");
     }
-})
+});
 
 $("body").on('click', '.add', function() {
     verbalExpressionsApp.addBlock($(".active").data("name"));
     $(".blocks .block").removeClass("active");
     $(".blockSettings").slideUp("fast");
     $(".noBlocks").remove();
-})
+});
 
 $(".outputRegex").on("click", function () {
    $(this).select();
